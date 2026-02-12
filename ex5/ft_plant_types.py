@@ -18,7 +18,7 @@ class Flower(Plant):
 
     def get_info(self) -> None:
         print(f"{self.name} (Flower): {self.height}cm, {self.age} days,"
-              f"{self.color} color")
+              f" {self.color} color")
 
 
 class Tree(Plant):
@@ -51,9 +51,14 @@ class Vegetable(Plant):
 
 
 if __name__ == "__main__":
-    rose = Flower("rose", 25, 30, "color")
+    rose = Flower("rose", 25, 30, "red")
     oak = Tree("oak", 500, 1825, 50)
     tomato = Vegetable("tomato", 80, 90, 'C', "summer")
+
+    tulip = Flower("tulip", 15, 27, "yellow")
+    olive = Tree("olive", 980, 1900, 20)
+    potato = Vegetable("potato", 80, 90, 'Z', "summer")
+
     print("=== Garden Plant Types ===")
     print()
     rose.get_info()

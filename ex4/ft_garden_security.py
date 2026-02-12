@@ -3,7 +3,7 @@ class SecurePlant:
         self.name = name
         self.__height = 0
         self.__age = 0
-        print(f"Plant created: {self.__name}")
+        print(f"Plant created: {self.name}")
 
     def set_height(self, height: str) -> None:
         if height < 0:
@@ -28,7 +28,7 @@ class SecurePlant:
         return self.__age
 
     def get_info(self) -> None:
-        print(f"Current plant: {self.__name} ({self.__height}cm, "
+        print(f"Current plant: {self.name} ({self.__height}cm, "
               f"{self.__age} days)")
 
 

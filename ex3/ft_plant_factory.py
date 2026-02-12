@@ -1,22 +1,22 @@
 class Plant:
+    created_count = 0
+
     def __init__(self, name: str, height: int, age: int) -> None:
         self.name = name
         self.height = height
         self.age = age
+        Plant.created_count += 1
         print(f"Created: {self.name} ({self.height}cm, {self.height} days)")
 
 
 if __name__ == "__main__":
     print("=== Plant Factory Output ===")
     plants = [
-        Plant("rose", 25, 30),
-        Plant("oak", 200, 365),
-        Plant("cactus", 5, 90),
-        Plant("sunflower", 80, 45),
-        Plant("fern", 15, 120),
+        Plant("Rose", 25, 30),
+        Plant("Oak", 200, 365),
+        Plant("Cactus", 5, 90),
+        Plant("Sunflower", 80, 45),
+        Plant("Fern", 15, 120),
     ]
-    strlen = 0
-    for plant in plants:
-        strlen += 1
-    print()
-    print(f"Total plants created: {strlen}")
+
+    print(f"\nTotal plants created: {Plant.created_count}")

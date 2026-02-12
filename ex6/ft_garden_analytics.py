@@ -7,10 +7,10 @@ class Plant:
     def grow(self) -> None:
         self.height += 1
         self.growth += 1
-        print(f"- {self.name} grew 1cm")
+        print(f"{self.name} grew 1cm")
 
     def description(self) -> str:
-        print(f"{self.name}: {self.height}cm")
+        print(f"- {self.name}: {self.height}cm")
 
 
 class FloweringPlant(Plant):
@@ -19,7 +19,7 @@ class FloweringPlant(Plant):
         self.color: str = color
 
     def description(self) -> str:
-        print(f"{self.name}: {self.height}cm, {self.color} flowers (blooming)")
+        print(f"- {self.name}: {self.height}cm, {self.color} flowers (blooming)")
 
 
 class PrizeFlower(FloweringPlant):
@@ -29,8 +29,8 @@ class PrizeFlower(FloweringPlant):
         self.points: int = points
 
     def description(self) -> str:
-        print(f"{self.name}: {self.height}cm, {self.color} flowers (blooming),"
-              f" Prize points: {self.points}")
+        print(f"- {self.name}: {self.height}cm, {self.color} flowers (blooming"
+              f"), Prize points: {self.points}")
 
 
 class Garden:
@@ -41,10 +41,12 @@ class Garden:
         self.plants = []
         self.plant_cnt = 0
 
-    def add_plant(self, plant: Plant) -> None:
+    def add_plant(self, plant: Plant, printable=True) -> None:
         self.plants += [plant]
         self.plant_cnt += 1
-        print(f"Added {plant.name} to {self.owner}'s garden")
+
+        if printable:
+            print(f"Added {plant.name} to {self.owner}'s garden")
 
     def grow_all(self) -> None:
         print(f"{self.owner} is helping all plants grow...")
@@ -114,7 +116,7 @@ class GardenManager:
 
 
 if __name__ == "__main__":
-    print("=== Garden Management System Demo ===")
+    print("=== Garden Management System Demo ===\n")
     manager = GardenManager.create_garden_network(["Alice", "Bob"])
 
     alice_garden = manager.get_garden("Alice")
@@ -129,8 +131,9 @@ if __name__ == "__main__":
     alice_garden.add_plant(oak)
     alice_garden.add_plant(rose)
     alice_garden.add_plant(sunflower)
-    bob_garden.add_plant(corn)
-    bob_garden.add_plant(lavender)
+
+    bob_garden.add_plant(corn, False)
+    bob_garden.add_plant(lavender, False)
 
     print()
     alice_garden.grow_all()
