@@ -1,6 +1,6 @@
 class SecurePlant:
     def __init__(self, name: str) -> None:
-        self.__name = name
+        self.name = name
         self.__height = 0
         self.__age = 0
         print(f"Plant created: {self.__name}")
