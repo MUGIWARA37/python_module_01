@@ -19,7 +19,8 @@ class FloweringPlant(Plant):
         self.color: str = color
 
     def description(self) -> str:
-        print(f"- {self.name}: {self.height}cm, {self.color} flowers (blooming)")
+        print(f"- {self.name}: {self.height}cm,"
+              f" {self.color} flowers (blooming)")
 
 
 class PrizeFlower(FloweringPlant):
